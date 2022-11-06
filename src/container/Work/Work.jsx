@@ -78,32 +78,20 @@ const Work = () => {
                   ease: 'easeInOut',
                   staggerChildren: 0,
                 }}
-                className="flex justify-center items-center absolute top-0 left-0 bottom-0 right-0 w-full h-full bg-black/50 rounded-lg opacity-0 transition-all duration-300"
+                className="flex justify-center items-center absolute  w-full h-full bg-black/50 rounded-lg opacity-0 transition-all duration-300"
               >
-                <a href={work.projectLink} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{
-                      duration: 0.25,
-                    }}
-                    className="flex justify-center items-center"
-                  >
-                    <AiFillEye />
-                  </motion.div>
-                </a>
-                <a href={work.codeLink} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{
-                      duration: 0.25,
-                    }}
-                    className="flex justify-center items-center"
-                  >
-                    <AiFillGithub />
-                  </motion.div>
-                </a>
+                <motion.a
+                  href={work.projectLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileInView={{ scale: [0, 1] }}
+                  whileHover={{ scale: [1, 0.9] }}
+                  transition={{
+                    duration: 0.25,
+                  }}
+                >
+                  <AiFillEye className="w-10 h-10" />
+                </motion.a>
               </motion.div>
             </div>
             <div className="flex justify-center items-center p-2 w-full relative flex-col">

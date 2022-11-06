@@ -57,9 +57,9 @@ const Header = () => {
         className="flex-1 h-full flex justify-end items-end relative my-8 lg:my-0"
       >
         <img
-          src={images.profile}
+          src={images.pasFOTO}
           alt="profile"
-          className="w-full object-contain z-10"
+          className="w-full object-contain z-10 rounded-full"
         />
         <motion.img
           whileInView={{ scale: [0, 1] }}
