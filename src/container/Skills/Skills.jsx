@@ -35,10 +35,7 @@ const Skills = () => {
               className="flex justify-center items-center flex-col text-center m-4 transition-all duration-300 ease-in-out"
               key={skill.name}
             >
-              <div
-                className="flex justify-center items-center w-24 h-24 rounded-full bg-gray-100 hover:shadow-sm hover:shadow-gray-100"
-                style={{ backgroundColor: skill.bgColor }}
-              >
+              <div className="flex justify-center items-center w-24 h-24 rounded-full bg-gray-100 hover:shadow-sm hover:shadow-gray-100">
                 <img
                   src={urlFor(skill.icon)}
                   className="w-1/2 h-1/2"
