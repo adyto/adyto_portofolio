@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import emailjs from '@emailjs/browser';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { filterProps } from 'framer-motion';
@@ -18,6 +19,8 @@ const Footer = () => {
   const { toName, name, email, message } = formData;
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [valuePhone, setValuePhone] = useState('081281903574');
+  const [copied, setCopied] = useState(false);
   const {
     register,
     handleSubmit,
@@ -58,9 +61,31 @@ const Footer = () => {
       <h1 className="font-bold text-3xl lg:text-5xl text-center my-10 text-black capitalize">
         Take A Coffe & Chat With Me
       </h1>
-      <div className="border-none rounded-xl bg-white flex flex-row items-center py-3 px-6 mb-10">
+      <div className="border-none rounded-xl bg-white flex flex-row items-center py-3 px-6 ">
         <img src={images.mobile} className="w-7" />
         <h2 className="ml-2 font-light">+62(812) - 8190 - 3574</h2>
+      </div>
+      <div className="flex flex-row mb-6 mt-2 gap-4 items-center">
+        <div className="border  py-1 px-2 bg-white rounded-lg">
+          <CopyToClipboard text={valuePhone} onCopy={() => setCopied(true)}>
+            {!copied ? (
+              <span className="font-medium">Copy No Phone</span>
+            ) : (
+              <span className="font-medium text-color-palette-2">
+                Berhasil dicopy!
+              </span>
+            )}
+          </CopyToClipboard>
+        </div>
+        <div className="border  py-1 px-2 bg-white rounded-lg">
+          <a
+            href="https://wa.me/+6281281903574?text=Hallo"
+            className="font-medium"
+            target="_blank"
+          >
+            Direct to WhatsApp
+          </a>
+        </div>
       </div>
       {!isFormSubmitted ? (
         <form onSubmit={handleSubmit(onSubmitMessage)}>
