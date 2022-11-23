@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.9.1",
+    "@hookform/error-message": "^2.0.1",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -13,6 +15,7 @@
     "postcss": "^8.4.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.39.5",
     "react-icons": "^4.6.0",
     "react-scripts": "5.0.1",
     "react-tooltip": "^4.4.3",
