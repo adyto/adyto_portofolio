@@ -152,8 +152,8 @@ const Footer = () => {
         </form>
       ) : (
         <h3 className="font-bold text-2xl lg:text-4xl mx-4 text-color-palette-2 max-w-2xl text-center">
-          Terimakasih sudah mengirim pesan, pesan yang masuk sudah diteruskan ke
-          Gmail melalui <span className="text-black">EmailJS</span>
+          Terimakasih sudah mengirim pesan yang akan diteruskan ke Gmail melalui{' '}
+          <span className="text-black">EmailJS</span>
         </h3>
       )}
     </div>
