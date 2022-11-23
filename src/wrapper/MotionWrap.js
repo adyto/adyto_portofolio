@@ -7,7 +7,7 @@ const MotionWrap = (Component, className) =>
       <motion.div
         whileInView={{ opacity: [0, 0, 1] }}
         transition={{ duration: 0.5 }}
-        className={`${className} flex justify-center items-center`}
+        className={`${className}`}
       >
         <Component />
       </motion.div>

@@ -26,11 +26,11 @@ const Header = () => {
         className="flex justify-start h-full items-start flex-[0.65] w-full xl:mx-8"
       >
         <div className="w-full flex justify-start items-start xl:justify-end xl:items-end flex-col gap-5">
-          <div className="flex justify-center items-center py-4 px-8 lg:py-0 lg:px-0 border-white rounded-2xl flex-row w-auto shadow-md shadow-black/10">
-            <span className="text-4xl ">👋</span>
-            <div className="ml-5">
+          <div className="flex justify-center items-center py-4 px-8 lg:py-2 lg:px-4 xl:py-4 xl:px-8 border-white rounded-2xl flex-row w-auto shadow-md shadow-black/10">
+            <span className="text-4xl lg:text-2xl xl:text-4xl">👋</span>
+            <div className="ml-5 lg:ml-3 xl:ml-4">
               <p className="">Hello, I am</p>
-              <h1 className="font-extrabold text-3xl lg:text-5xl items-center text-black capitalize">
+              <h1 className="font-extrabold text-3xl lg:text-3xl xl:text-4xl items-center text-black capitalize">
                 Adi Yulianto
               </h1>
             </div>
@@ -64,7 +64,7 @@ const Header = () => {
         <motion.img
           whileInView={{ scale: [0, 1] }}
           transition={{ duration: 1, ease: 'easeInOut' }}
-          className="absolute left-0 right-0 bottom-10 xl:bottom-0 z-0 w-full lg:w-96 xl:w-full 2xl:h-[90%]"
+          className="absolute left-0 right-0 bottom-10 xl:bottom-0 z-0 w-full xl:w-full 2xl:h-[90%]"
           src={images.circle}
           alt="profile_circle"
         />

@@ -16,13 +16,13 @@ const About = () => {
   console.log(abouts);
 
   return (
-    <div className="flex flex-col w-full justify-center items-center">
-      <h1 className="text-5xl font-bold text-center text-black capitalize">
+    <div className="flex flex-col w-full justify-center items-center my-10 xl:my-0">
+      <h1 className="text-3xl lg:text-5xl font-bold text-center text-black capitalize">
         I Know That <span className="text-color-palette-2">Good Apps</span>
         <br />
         means <span className="text-color-palette-2">Good Business</span>
       </h1>
-      <div className="flex justify-center items-start flex-wrap mt-8">
+      <div className="flex justify-center items-start flex-wrap  mt-4 lg:mt-8">
         {abouts.map((about, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
@@ -50,7 +50,7 @@ const About = () => {
 };
 
 export default AppWrap(
-  MotionWrap(About, 'flex-1 w-full flex-col'),
+  MotionWrap(About, 'flex-1 w-full flex-col flex justify-center items-center'),
   'about',
   'bg-white',
 );

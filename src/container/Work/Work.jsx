@@ -37,7 +37,7 @@ const Work = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full justify-center items-center">
+    <div className="flex flex-col w-full justify-center items-center my-10">
       <h1 className="text-5xl font-bold text-center text-black capitalize">
         My Creative <span className="text-color-palette-2">Portfolio </span>
         Section
@@ -115,7 +115,7 @@ const Work = () => {
 };
 
 export default AppWrap(
-  MotionWrap(Work, 'flex-1 w-full flex-col'),
+  MotionWrap(Work, 'flex-1 w-full flex-col lg:flex  lg:items-center'),
   'work',
   'bg-color-palette-1',
 );

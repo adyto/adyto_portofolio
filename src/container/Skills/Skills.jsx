@@ -22,12 +22,12 @@ const Skills = () => {
     });
   }, []);
   return (
-    <div className="flex flex-col justify-center items-center w-full">
-      <h2 className="font-bold text-5xl text-center text-black capitalize">
+    <div className="flex flex-col justify-center items-center w-full my-10 lg:my-0">
+      <h2 className="font-bold text-3xl lg:text-5xl text-center text-black capitalize">
         Skills & Experience
       </h2>
-      <div className="w-4/5 mt-12 flex flex-row">
-        <motion.div className="flex-1 flex flex-wrap justify-center items-center md:justify-start md:items-start mr-20 w-full">
+      <div className="w-4/5 mt-12 flex flex-col lg:flex-row items-center lg:items-start">
+        <motion.div className="flex-1 flex flex-wrap justify-center items-center md:justify-center md:items-start lg:mr-20 w-full">
           {skills?.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
@@ -48,6 +48,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+
         <motion.div className="flex-1 flex justify-start items-start flex-col">
           {experiences?.map((experience) => (
             <motion.div
@@ -97,7 +98,10 @@ const Skills = () => {
 };
 
 export default AppWrap(
-  MotionWrap(Skills, 'flex-1 w-full flex-col'),
+  MotionWrap(
+    Skills,
+    'flex-1 w-full flex-col lg:flex lg:justify-center lg:items-center',
+  ),
   'skills',
   'bg-white',
 );
