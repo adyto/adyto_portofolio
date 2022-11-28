@@ -10,6 +10,9 @@ module.exports = {
       backgroundImage: {
         bgIMG: 'url(/src/assets/bgIMG.png)',
       },
+      fontFamily: {
+        Rubik: ['Rubik Microbe', 'cursive'],
+      },
     },
   },
   plugins: [],

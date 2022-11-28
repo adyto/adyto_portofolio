@@ -11,7 +11,9 @@ const Navbar = () => {
   return (
     <nav className="w-full flex flex-row justify-between items-center py-4 px-8 bg-white/25 backdrop-blur-sm border-[1px] border-solid border-white/20 fixed z-50">
       <div className="flex justify-start items-center">
-        <img src={images.logo} alt="logo" className="w-24 h-5" />
+        <h1 className="font-Rubik text-3xl font-medium">
+          Ady<span className="text-color-palette-2">.to</span>
+        </h1>
       </div>
       <ul className="flex-1 flex justify-center items-center list-none max-md:hidden">
         {['home', 'about', 'work', 'skills', 'contact'].map((item) => (

@@ -37,8 +37,10 @@ import spotify from '../assets/spotify.png';
 import bgWhite from '../assets/bgWhite.png';
 import bgIMG from '../assets/bgIMG.png';
 import pasFOTO from '../assets/PASFOTO.png';
+import adytoLogo from '../assets/adytoLogo.png';
 
 export default {
+  adytoLogo,
   pasFOTO,
   bgIMG,
   bgWhite,
