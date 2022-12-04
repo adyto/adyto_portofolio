@@ -74,14 +74,16 @@ const Header = () => {
         whileInView={scaleVariants.whileInView}
         className="flex-[0.75] w-full flex flex-row flex-wrap ml-0 lg:flex-col justify-evenly lg:items-center xl:items-start h-full xl:ml-4"
       >
-        {[images.flutter, images.redux, images.sass].map((circle, index) => (
-          <div
-            className="flex justify-center items-center w-24 h-24 rounded-full bg-white shadow-md shadow-black/10"
-            key={`circle-${index}`}
-          >
-            <img src={circle} alt="circle" className="w-3/5 h-3/5" />
-          </div>
-        ))}
+        {[images.react, images.javascript, images.tailwind].map(
+          (circle, index) => (
+            <div
+              className="flex justify-center items-center w-24 h-24 rounded-full bg-white shadow-md shadow-black/10"
+              key={`circle-${index}`}
+            >
+              <img src={circle} alt="circle" className="w-3/5 h-3/5" />
+            </div>
+          ),
+        )}
       </motion.div>
     </div>
   );
