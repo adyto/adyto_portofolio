@@ -6,12 +6,15 @@ module.exports = {
       colors: {
         'color-palette-1': '#edf2f8',
         'color-palette-2': '#313bac',
+        'color-palette-3': '#F7FBFC',
+        'color-palette-4': '#071E3D',
       },
       backgroundImage: {
         bgIMG: 'url(/src/assets/bgIMG.png)',
       },
       fontFamily: {
-        Rubik: ['Rubik Microbe', 'cursive'],
+        Rubik: ['Rubik Moonrocks', 'cursive'],
+        Poppins: ['Poppins', 'sans-serif'],
       },
     },
   },

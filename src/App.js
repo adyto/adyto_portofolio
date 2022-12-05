@@ -5,7 +5,7 @@ import { Navbar } from './components';
 
 const App = () => {
   return (
-    <div className="bg-color-palette-1">
+    <div className="bg-color-palette-1 font-Poppins">
       <Navbar />
       <Header />
       <About />

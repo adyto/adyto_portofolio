@@ -103,5 +103,5 @@ export default AppWrap(
     'flex-1 w-full flex-col lg:flex lg:justify-center lg:items-center',
   ),
   'skills',
-  'bg-white',
+  'bg-color-palette-3',
 );

@@ -3,10 +3,11 @@ import { useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import emailjs from '@emailjs/browser';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { BsInstagram } from 'react-icons/bs';
+import { SlSocialLinkedin } from 'react-icons/sl';
+import { FiGithub } from 'react-icons/fi';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
-import { filterProps } from 'framer-motion';
-
 import { images } from '../../constants';
 
 const Footer = () => {
@@ -59,33 +60,35 @@ const Footer = () => {
   return (
     <div className="flex flex-col justify-center items-center my-10 lg:my-0">
       <h1 className="font-bold text-3xl lg:text-5xl text-center my-10 text-black capitalize">
-        Take A Coffe & Chat With Me
+        Let's talk.
+        <span className="block font-normal text-sm text-center text-color-palette-4">
+          New Project, freelance or even a coffee
+        </span>
       </h1>
-      <div className="border-none rounded-xl bg-white flex flex-row items-center py-3 px-6 ">
+      <div className="border-none rounded-xl bg-white flex flex-row items-center py-3 px-6">
         <img src={images.mobile} className="w-7" />
-        <h2 className="ml-2 font-light">+62(812) - 8190 - 3574</h2>
+        <CopyToClipboard text={valuePhone} onCopy={() => setCopied(true)}>
+          {!copied ? (
+            <span className="font-medium text-color-palette-4">
+              +62(812) - 8190 - 3574
+            </span>
+          ) : (
+            <span className="font-medium text-color-palette-4">
+              Berhasil di simpan!
+            </span>
+          )}
+        </CopyToClipboard>
       </div>
-      <div className="flex flex-row mb-6 mt-2 gap-4 items-center">
-        <div className="border  py-1 px-2 bg-white rounded-lg">
-          <CopyToClipboard text={valuePhone} onCopy={() => setCopied(true)}>
-            {!copied ? (
-              <span className="font-medium">Copy No Phone</span>
-            ) : (
-              <span className="font-medium text-color-palette-2">
-                Berhasil dicopy!
-              </span>
-            )}
-          </CopyToClipboard>
-        </div>
-        <div className="border  py-1 px-2 bg-white rounded-lg">
-          <a
-            href="https://wa.me/+6281281903574?text=Hallo"
-            className="font-medium"
-            target="_blank"
-          >
-            Direct to WhatsApp
-          </a>
-        </div>
+      <div className="flex flex-row gap-4 my-8">
+        <a href="https://github.com/adyto" target={'_blank'}>
+          <FiGithub className="w-6 h-6 text-color-palette-4" />
+        </a>
+        <a href="https://www.instagram.com/ady.to/" target={'_blank'}>
+          <BsInstagram className="w-6 h-6 text-color-palette-4" />
+        </a>
+        <a href="https://www.linkedin.com/in/adi-yulianto-300486163/">
+          <SlSocialLinkedin className="w-6 h-6 text-color-palette-4" />
+        </a>
       </div>
       {!isFormSubmitted ? (
         <form onSubmit={handleSubmit(onSubmitMessage)}>
