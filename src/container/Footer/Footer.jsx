@@ -69,11 +69,11 @@ const Footer = () => {
         <img src={images.mobile} className="w-7" />
         <CopyToClipboard text={valuePhone} onCopy={() => setCopied(true)}>
           {!copied ? (
-            <span className="font-medium text-color-palette-4">
+            <span className="font-medium text-color-palette-4 cursor-pointer">
               +62(812) - 8190 - 3574
             </span>
           ) : (
-            <span className="font-medium text-color-palette-4">
+            <span className="font-medium text-color-palette-4 cursor-pointer">
               Berhasil di simpan!
             </span>
           )}

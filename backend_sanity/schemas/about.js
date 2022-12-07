@@ -1,25 +1,30 @@
 export default {
-  name: "abouts",
-  title: "Abouts",
-  type: "document",
+  name: 'abouts',
+  title: 'Abouts',
+  type: 'document',
   fields: [
     {
-      name: "title",
-      title: "Title",
-      type: "string",
+      name: 'name',
+      title: 'Name',
+      type: 'string',
     },
     {
-      name: "description",
-      title: "Description",
-      type: "string",
-    },
-    {
-      name: "imgUrl",
-      title: "ImgUrl",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      name: 'tech',
+      title: 'Tech',
+      type: 'array',
+      of: [
+        {
+          title: 'Name Tech',
+          type: 'object',
+          fields: [
+            {
+              name: 'name',
+              title: 'Name',
+              type: 'string',
+            },
+          ],
+        },
+      ],
     },
   ],
 };

@@ -31,6 +31,7 @@ const About = () => {
 
     client.fetch(query).then((data) => setAbouts(data));
   }, []);
+  console.log(abouts);
 
   return (
     <>
@@ -60,12 +61,24 @@ const About = () => {
           Here are some of the technologies I've been using recently:
         </h4>
         <div className="grid grid-cols-2 gap-2">
-          {dataStack.map((res) => (
+          {abouts.map((results) => (
+            <>
+              {results.tech.map((res) => (
+                <div className="flex flex-row items-center">
+                  <BsFillDiamondFill className="text-color-palette-2 h-4 w-4" />
+                  <p className="ml-2 text-color-palette-4 text-sm">
+                    {res.name}
+                  </p>
+                </div>
+              ))}
+            </>
+          ))}
+          {/* {dataStack.map((res) => (
             <div className="flex flex-row items-center">
               <BsFillDiamondFill className="text-color-palette-2 h-4 w-4" />
               <p className="ml-2 text-color-palette-4 text-sm">{res.title}</p>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
       {/* <div className="flex justify-center items-start flex-wrap  mt-4 lg:mt-8">

@@ -43,7 +43,7 @@ const Work = () => {
         Section
       </h1>
       <div className="flex flex-row justify-start items-center flex-wrap my-16 mx-8">
-        {['UI/UX', 'Web App', 'React JS', 'All'].map((item, index) => (
+        {['Web Design', 'ReactJS', 'NextJS', 'All'].map((item, index) => (
           <div
             key={item + index}
             onClick={() => handleWorkFilter(item)}
