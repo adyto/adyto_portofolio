@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
+import { AiOutlineCloudDownload } from 'react-icons/ai';
 
 import { images } from '../../constants/';
 import bgWhite from '../../assets/bgWhite.png';
@@ -27,6 +28,15 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+      <div className="max-md:hidden ">
+        <a
+          href="https://www.cakeresume.com/pdf/s--PpJdDttn7k1odFwJ0IXXSA--/GpD2m.pdf"
+          className="flex flex-row items-center cursor-pointer bg-color-palette-2/80 py-1 px-3 gap-2 w-full h-full text-white rounded-full"
+        >
+          <AiOutlineCloudDownload />
+          <span>Resume</span>
+        </a>
+      </div>
       <div className="w-9 h-9 rounded-full relative flex-row justify-center items-center bg-color-palette-2 md:hidden flex">
         <HiMenuAlt4
           onClick={() => setToggle(true)}
