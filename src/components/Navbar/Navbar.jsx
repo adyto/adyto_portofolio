@@ -30,7 +30,7 @@ const Navbar = () => {
       </ul>
       <div className="max-md:hidden ">
         <a
-          href="https://www.cakeresume.com/pdf/s--j6fJFu8LMfgM4RFiwTPInw--/BMp3x.pdf"
+          href="https://www.cakeresume.com/pdf/s--dXvS29t2-grECLYZyk2cPQ--/2NvwN.pdf"
           className="flex flex-row items-center cursor-pointer bg-color-palette-2/80 py-1 px-3 gap-2 w-full h-full text-white rounded-full"
         >
           <AiOutlineCloudDownload />
