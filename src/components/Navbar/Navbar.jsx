@@ -70,6 +70,13 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
+              <a
+                href="https://www.cakeresume.com/pdf/s--dXvS29t2-grECLYZyk2cPQ--/2NvwN.pdf"
+                className="flex flex-row items-center cursor-pointer bg-color-palette-2/80 py-1 px-3 gap-2  text-white rounded-full"
+              >
+                <AiOutlineCloudDownload />
+                <span>Resume</span>
+              </a>
             </ul>
           </motion.div>
         )}

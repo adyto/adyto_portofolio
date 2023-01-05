@@ -42,7 +42,7 @@ const Work = () => {
         My Creative <span className="text-color-palette-2">Portfolio </span>
         Section
       </h1>
-      <div className="flex flex-row justify-start items-center flex-wrap my-16 mx-8">
+      <div className="flex lg:flex-row lg:justify-start items-center flex-wrap justify-center my-16 mx-8">
         {['Web Design', 'ReactJS', 'NextJS', 'All'].map((item, index) => (
           <div
             key={item + index}
