@@ -101,6 +101,14 @@ const Work = () => {
               <p className="text-sm text-left text-gray-400 mt-3">
                 {work.description}
               </p>
+              <a
+                className="md:hidden border mt-4 px-4 py-2 bg-color-palette-2 text-white rounded-md"
+                href={work.projectLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Learn More
+              </a>
               <div className="flex justify-center items-center absolute py-2 px-4 rounded-xl bg-white -top-6">
                 <p className="text-sm text-left text-gray-400">
                   {work.tags[0]}
