@@ -12,6 +12,12 @@ const Work = () => {
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
 
+  const sortedDates = filterWork
+    .map((obj) => {
+      return { ...obj, date: new Date(obj._createdAt) };
+    })
+    .sort((a, b) => b.date - a.date);
+
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard({ y: 100, opacity: 0 });
@@ -35,6 +41,8 @@ const Work = () => {
       setFilterWork(data);
     });
   }, []);
+
+  console.log(filterWork);
 
   return (
     <div className="flex flex-col w-full justify-center items-center my-10">
@@ -60,7 +68,7 @@ const Work = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="flex flex-wrap justify-center items-center"
       >
-        {filterWork.map((work, index) => (
+        {sortedDates.map((work, index) => (
           <div
             className="flex justify-center items-center w-72 flex-col m-8 p-4 rounded-lg bg-white text-black cursor-pointer transition-all duration-300 hover:shadow-md hover:shadow-black/20"
             key={index}
