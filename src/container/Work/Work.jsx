@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
+import { IoMdClose } from 'react-icons/io';
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -33,19 +34,23 @@ const Work = () => {
     }, 500);
   };
 
+  const [thumbnailData, setThumbnailData] = useState([]);
+  const [modal, setModal] = useState(false);
+  const [modalId, setModalId] = useState('');
+
   useEffect(() => {
     const query = '*[_type == "works"]';
 
     client.fetch(query).then((data) => {
       setWorks(data);
       setFilterWork(data);
+      setThumbnailData(data.filter((item) => item._id.includes(modalId)));
     });
-  }, []);
-
-  console.log(filterWork);
+  }, [modalId]);
+  console.log(thumbnailData);
 
   return (
-    <div className="flex flex-col w-full justify-center items-center my-10">
+    <div className="flex flex-col w-full h-full justify-center items-center my-10 relative">
       <h1 className="text-5xl font-bold text-center text-black capitalize">
         My Creative <span className="text-color-palette-2">Portfolio </span>
         Section
@@ -88,18 +93,31 @@ const Work = () => {
                 }}
                 className="flex justify-center items-center absolute  w-full h-full bg-black/50 rounded-lg opacity-0 transition-all duration-300"
               >
-                <motion.a
-                  href={work.projectLink}
-                  target="_blank"
-                  rel="noreferrer"
+                <motion.div
                   whileInView={{ scale: [0, 1] }}
                   whileHover={{ scale: [1, 0.9] }}
                   transition={{
                     duration: 0.25,
                   }}
+                  className="flex flex-col gap-4 text-white"
                 >
-                  <AiFillEye className="w-10 h-10" />
-                </motion.a>
+                  <button
+                    onClick={() => {
+                      setModal(true);
+                      setModalId(work._id);
+                    }}
+                    className="border py-2 px-2"
+                  >
+                    Lihat Stacks
+                  </button>
+                  <a
+                    href={work?.projectLink}
+                    target="_blank"
+                    className="border py-2 px-2"
+                  >
+                    Kunjungi Web
+                  </a>
+                </motion.div>
               </motion.div>
             </div>
             <div className="flex justify-center items-center p-2 w-full relative flex-col">
@@ -109,14 +127,25 @@ const Work = () => {
               <p className="text-sm text-left text-gray-400 mt-3">
                 {work.description}
               </p>
-              <a
-                className="md:hidden border mt-4 px-4 py-2 bg-color-palette-2 text-white rounded-md"
-                href={work.projectLink}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Learn More
-              </a>
+              <div className="flex flex-row gap-2 mt-2">
+                <button
+                  onClick={() => {
+                    setModal(true);
+                    setModalId(work._id);
+                  }}
+                  className="border px-2 bg-color-palette-2 text-white rounded-md "
+                >
+                  Stacks
+                </button>
+                <a
+                  href={work?.projectLink}
+                  target="_blank"
+                  className="border px-2 bg-color-palette-2 text-white rounded-md "
+                  rel="noreferrer"
+                >
+                  See Web
+                </a>
+              </div>
               <div className="flex justify-center items-center absolute py-2 px-4 rounded-xl bg-white -top-6">
                 <p className="text-sm text-left text-gray-400">
                   {work.tags[0]}
@@ -126,6 +155,89 @@ const Work = () => {
           </div>
         ))}
       </motion.div>
+      {modal && (
+        <div className="w-5/6 lg:w-1/2 lg:h/1/2 fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-50 bg-color-palette-4 p-4 text-white">
+          <IoMdClose
+            onClick={() => setModal(false)}
+            className="absolute top-2 right-1 cursor-pointer"
+          />
+          {thumbnailData?.map((value) => (
+            <div className="flex flex-col w-full justify-center items-center">
+              <span>Identify technologies on websites</span>
+              <span className="mb-4">Third-Party NPM Packages</span>
+              <div className="flex flex-wrap w-full">
+                <div className="flex flex-col w-2/5">
+                  {value?.stacks.map?.((item, i) => (
+                    <div>
+                      <p>
+                        {item === 'nextjs' || item === 'reactjs'
+                          ? 'JavaScript frameworks'
+                          : ''}
+                      </p>
+                      <p>
+                        {item === 'nextjs' || item === 'reactjs' ? item : ''}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col w-2/5">
+                  {value?.stacks?.map?.((item, i) => (
+                    <div>
+                      <p>{item === 'sanity' ? 'CMS' : ''}</p>
+                      <p>{item === 'sanity' ? item : ''}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col w-2/5">
+                  {value?.stacks?.map?.((item, i) => (
+                    <div>
+                      <p>
+                        {item === 'tailwindcss' || item === 'bootstrap'
+                          ? 'UI frameworks'
+                          : ''}
+                      </p>
+                      <p>
+                        {item === 'tailwindcss' || item === 'bootstrap'
+                          ? item
+                          : ''}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col w-2/5">
+                  {value?.stacks?.map((item, i) => (
+                    <div>
+                      <p>
+                        {item === 'react-redux'
+                          ? 'State Management Library '
+                          : ''}
+                      </p>
+                      <p>{item === 'react-redux' ? item : ''}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col w-2/5">
+                  {value?.stacks?.map?.((item, i) => (
+                    <div>
+                      <p>
+                        {item === 'moment' ||
+                        item === 'react-router-dom' ||
+                        item === 'react-icons' ||
+                        item === 'react-hook-form' ||
+                        item === 'react-select' ||
+                        item === 'chakra-ui-accordion' ||
+                        item === 'chakra-ui-breadcrumb'
+                          ? item
+                          : ''}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

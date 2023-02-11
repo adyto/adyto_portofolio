@@ -2,26 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { BsFillDiamondFill } from 'react-icons/bs';
 
-import { urlFor, client } from '../../client';
+import { client } from '../../client';
 import { AppWrap, MotionWrap } from '../../wrapper';
-
-const dataStack = [
-  {
-    title: 'Javascript',
-  },
-  {
-    title: 'React',
-  },
-  {
-    title: 'Tailwind',
-  },
-  {
-    title: 'Sanity',
-  },
-  {
-    title: 'Bootstap',
-  },
-];
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
@@ -31,8 +13,6 @@ const About = () => {
 
     client.fetch(query).then((data) => setAbouts(data));
   }, []);
-  console.log(abouts);
-
   return (
     <>
       <h1 className="text-4xl lg:text-5xl font-bold text-center text-black capitalize mb-4">

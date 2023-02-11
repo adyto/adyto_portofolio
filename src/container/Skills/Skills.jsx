@@ -8,7 +8,6 @@ import { urlFor, client } from '../../client';
 const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [experiences, setExperiences] = useState([]);
-  console.log(experiences);
 
   useEffect(() => {
     const query = '*[_type == "skills"]';
