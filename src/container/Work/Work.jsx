@@ -71,11 +71,11 @@ const Work = () => {
       <motion.div
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="flex flex-wrap justify-center items-center"
+        className="flex flex-wrap justify-center items-center w-full gap-8"
       >
         {sortedDates.map((work, index) => (
           <div
-            className="flex justify-center items-center w-72 flex-col m-8 p-4 rounded-lg bg-white text-black cursor-pointer transition-all duration-300 hover:shadow-md hover:shadow-black/20"
+            className="flex justify-between items-center w-72 h-[450px] flex-col p-4 rounded-lg bg-white text-black cursor-pointer transition-all duration-300 hover:shadow-md hover:shadow-black/20"
             key={index}
           >
             <div className="flex justify-center items-center w-full h-60 relative">
@@ -84,6 +84,9 @@ const Work = () => {
                 alt={work.name}
                 className="w-full h-full rounded-lg object-cover"
               />
+              <p className="text-sm bg-white w-20 mx-auto rounded-lg px-2 py-2 shadow-md text-center text-gray-400 absolute inset-x-0 -bottom-4 ">
+                {work.tags[0]}
+              </p>
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{
@@ -106,16 +109,16 @@ const Work = () => {
                       setModal(true);
                       setModalId(work._id);
                     }}
-                    className="border py-2 px-2"
+                    className="border py-2 px-2 scale-95 hover:scale-100 duration-200 rounded-md"
                   >
-                    Lihat Stacks
+                    Stacks
                   </button>
                   <a
                     href={work?.projectLink}
                     target="_blank"
-                    className="border py-2 px-2"
+                    className="border py-2 px-2 scale-95 hover:scale-100 duration-200 rounded-md"
                   >
-                    Kunjungi Web
+                    View More
                   </a>
                 </motion.div>
               </motion.div>
@@ -125,7 +128,9 @@ const Work = () => {
                 {work.title}
               </h1>
               <p className="text-sm text-left text-gray-400 mt-3">
-                {work.description}
+                {work.description.length > 100
+                  ? `${work.description.substring(0, 100)}....`
+                  : work.description}
               </p>
               <div className="flex flex-row gap-2 mt-2">
                 <button
@@ -133,23 +138,18 @@ const Work = () => {
                     setModal(true);
                     setModalId(work._id);
                   }}
-                  className="border px-2 bg-color-palette-2 text-white rounded-md "
+                  className="border px-3 py-1 bg-color-palette-2 text-white rounded-md scale-95 hover:scale-100"
                 >
                   Stacks
                 </button>
                 <a
                   href={work?.projectLink}
                   target="_blank"
-                  className="border px-2 bg-color-palette-2 text-white rounded-md "
+                  className="border px-3 py-1 bg-color-palette-2 text-white rounded-md scale-95 hover:scale-100"
                   rel="noreferrer"
                 >
-                  See Web
+                  View More
                 </a>
-              </div>
-              <div className="flex justify-center items-center absolute py-2 px-4 rounded-xl bg-white -top-6">
-                <p className="text-sm text-left text-gray-400">
-                  {work.tags[0]}
-                </p>
               </div>
             </div>
           </div>
