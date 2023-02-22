@@ -21,7 +21,9 @@ const About = () => {
       <div className="flex flex-col gap-4 max-w-4xl md:text-xl text-color-palette-4">
         <h1>
           Hallo! My name is{' '}
-          <span className="text-color-palette-2 font-medium">Adi Yulianto</span>{' '}
+          <span className="text-color-palette-2 relative font-medium after:hover:absolute after:hover:bg-color-palette-2 after:hover:-bottom-0.5 after:hover:left-0 after:h-0.5 after:transition-all after:duration-500 after:w-full cursor-default">
+            Adi Yulianto
+          </span>{' '}
           I am a Fresh-Graduate in Information System from National University.
           My interest in technology is very high, I am proficient in using CSS
           Framework with Tailwind or Bootstap, HTML and CSS.
@@ -40,7 +42,7 @@ const About = () => {
           </span>
           <span className="block mt-2">
             Here are some of the{' '}
-            <span className="text-color-palette-2 font-medium">
+            <span className="text-color-palette-2 relative font-medium after:hover:absolute after:hover:bg-color-palette-2 after:hover:-bottom-0.5 after:hover:left-0 after:h-0.5 after:transition-all after:duration-500 after:w-full cursor-default">
               technologies I've been using recently:
             </span>
           </span>
