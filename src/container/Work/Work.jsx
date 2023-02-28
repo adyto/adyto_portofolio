@@ -46,11 +46,7 @@ const Work = () => {
   }, []);
 
   const res = sortedDates.filter((w) => w._id.includes(modalId));
-  console.log(res);
 
-  console.log(modalId);
-
-  // setThumbnailData(works.filter((item) => item._id.includes(modalId)));
   return (
     <div className="flex flex-col w-full h-full justify-center items-center my-10 relative">
       <h1 className="text-5xl font-bold text-center text-black capitalize">
