@@ -33,21 +33,20 @@ const Work = () => {
       }
     }, 500);
   };
-
-  const [thumbnailData, setThumbnailData] = useState([]);
   const [modal, setModal] = useState(false);
   const [modalId, setModalId] = useState('');
 
+  const [thumbnailData, setThumbnailData] = useState([]);
   useEffect(() => {
     const query = '*[_type == "works"]';
 
     client.fetch(query).then((data) => {
       setWorks(data);
       setFilterWork(data);
-      setThumbnailData(data.filter((item) => item._id.includes(modalId)));
     });
+
+    setThumbnailData(works.filter((item) => item._id.includes(modalId)));
   }, [modalId]);
-  console.log(thumbnailData);
 
   return (
     <div className="flex flex-col w-full h-full justify-center items-center my-10 relative">
@@ -161,79 +160,85 @@ const Work = () => {
             onClick={() => setModal(false)}
             className="absolute top-2 right-1 cursor-pointer"
           />
-          {thumbnailData?.map((value) => (
-            <div className="flex flex-col w-full justify-center items-center">
+
+          {thumbnailData.map((value, i) => (
+            <div
+              key={i}
+              className="flex flex-col w-full justify-center items-center"
+            >
               <span>Identify technologies on websites</span>
               <span className="mb-4">Third-Party NPM Packages</span>
-              <div className="flex flex-wrap w-full">
-                <div className="flex flex-col w-2/5">
-                  {value?.stacks.map?.((item, i) => (
-                    <div>
-                      <p>
-                        {item === 'nextjs' || item === 'reactjs'
-                          ? 'JavaScript frameworks'
-                          : ''}
-                      </p>
-                      <p>
-                        {item === 'nextjs' || item === 'reactjs' ? item : ''}
-                      </p>
-                    </div>
-                  ))}
+              {value.stacks && (
+                <div className="flex flex-wrap w-full">
+                  <div className="flex flex-col w-2/5">
+                    {value?.stacks.map?.((item, i) => (
+                      <div key={i}>
+                        <p>
+                          {item === 'nextjs' || item === 'reactjs'
+                            ? 'JavaScript frameworks'
+                            : ''}
+                        </p>
+                        <p>
+                          {item === 'nextjs' || item === 'reactjs' ? item : ''}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-col w-2/5">
+                    {value?.stacks?.map?.((item, i) => (
+                      <div>
+                        <p>{item === 'sanity' ? 'CMS' : ''}</p>
+                        <p>{item === 'sanity' ? item : ''}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-col w-2/5">
+                    {value?.stacks?.map?.((item, i) => (
+                      <div>
+                        <p>
+                          {item === 'tailwindcss' || item === 'bootstrap'
+                            ? 'UI frameworks'
+                            : ''}
+                        </p>
+                        <p>
+                          {item === 'tailwindcss' || item === 'bootstrap'
+                            ? item
+                            : ''}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-col w-2/5">
+                    {value?.stacks?.map((item, i) => (
+                      <div>
+                        <p>
+                          {item === 'react-redux'
+                            ? 'State Management Library '
+                            : ''}
+                        </p>
+                        <p>{item === 'react-redux' ? item : ''}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-col w-2/5">
+                    {value?.stacks?.map?.((item, i) => (
+                      <div>
+                        <p>
+                          {item === 'moment' ||
+                          item === 'react-router-dom' ||
+                          item === 'react-icons' ||
+                          item === 'react-hook-form' ||
+                          item === 'react-select' ||
+                          item === 'chakra-ui-accordion' ||
+                          item === 'chakra-ui-breadcrumb'
+                            ? item
+                            : ''}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex flex-col w-2/5">
-                  {value?.stacks?.map?.((item, i) => (
-                    <div>
-                      <p>{item === 'sanity' ? 'CMS' : ''}</p>
-                      <p>{item === 'sanity' ? item : ''}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col w-2/5">
-                  {value?.stacks?.map?.((item, i) => (
-                    <div>
-                      <p>
-                        {item === 'tailwindcss' || item === 'bootstrap'
-                          ? 'UI frameworks'
-                          : ''}
-                      </p>
-                      <p>
-                        {item === 'tailwindcss' || item === 'bootstrap'
-                          ? item
-                          : ''}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col w-2/5">
-                  {value?.stacks?.map((item, i) => (
-                    <div>
-                      <p>
-                        {item === 'react-redux'
-                          ? 'State Management Library '
-                          : ''}
-                      </p>
-                      <p>{item === 'react-redux' ? item : ''}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col w-2/5">
-                  {value?.stacks?.map?.((item, i) => (
-                    <div>
-                      <p>
-                        {item === 'moment' ||
-                        item === 'react-router-dom' ||
-                        item === 'react-icons' ||
-                        item === 'react-hook-form' ||
-                        item === 'react-select' ||
-                        item === 'chakra-ui-accordion' ||
-                        item === 'chakra-ui-breadcrumb'
-                          ? item
-                          : ''}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              )}
             </div>
           ))}
         </div>
