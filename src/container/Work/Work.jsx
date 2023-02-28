@@ -33,10 +33,9 @@ const Work = () => {
       }
     }, 500);
   };
+
   const [modal, setModal] = useState(false);
   const [modalId, setModalId] = useState('');
-
-  const [thumbnailData, setThumbnailData] = useState([]);
   useEffect(() => {
     const query = '*[_type == "works"]';
 
@@ -44,10 +43,14 @@ const Work = () => {
       setWorks(data);
       setFilterWork(data);
     });
+  }, []);
 
-    setThumbnailData(works.filter((item) => item._id.includes(modalId)));
-  }, [modalId]);
+  const res = sortedDates.filter((w) => w._id.includes(modalId));
+  console.log(res);
 
+  console.log(modalId);
+
+  // setThumbnailData(works.filter((item) => item._id.includes(modalId)));
   return (
     <div className="flex flex-col w-full h-full justify-center items-center my-10 relative">
       <h1 className="text-5xl font-bold text-center text-black capitalize">
@@ -161,7 +164,7 @@ const Work = () => {
             className="absolute top-2 right-1 cursor-pointer"
           />
 
-          {thumbnailData.map((value, i) => (
+          {res.map((value, i) => (
             <div
               key={i}
               className="flex flex-col w-full justify-center items-center"
