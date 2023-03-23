@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
@@ -114,6 +112,7 @@ const Work = () => {
                   <a
                     href={work?.projectLink}
                     target="_blank"
+                    rel="noreferrer"
                     className="border py-2 px-2 scale-95 hover:scale-100 duration-200 rounded-md"
                   >
                     View More
