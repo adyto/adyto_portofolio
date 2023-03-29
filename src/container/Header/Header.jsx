@@ -54,7 +54,7 @@ const Header = () => {
       <motion.div
         whileInView={{ opacity: [0, 1] }}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="flex-1 h-full flex justify-end items-end relative my-5 lg:my-0"
+        className="flex-1 h-full flex justify-end items-end relative my-5 md:w-2/3 lg:my-0"
       >
         <img
           src={images.pasFOTO}
@@ -77,7 +77,7 @@ const Header = () => {
         {[images.react, images.javascript, images.tailwind].map(
           (circle, index) => (
             <div
-              className="flex justify-center items-center w-24 h-24 rounded-full bg-white shadow-md shadow-black/10"
+              className="flex justify-center items-center first:w-24 first:h-24 w-24 h-24 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-48 xl:h-48 2xl:w-52  2xl:h-52  last:w-24 last:h-24 rounded-full bg-white shadow-md shadow-black/10"
               key={`circle-${index}`}
             >
               <img src={circle} alt="circle" className="w-3/5 h-3/5" />
