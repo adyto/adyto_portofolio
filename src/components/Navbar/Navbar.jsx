@@ -11,17 +11,17 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex flex-row justify-between items-center py-4 px-8 bg-white/25 backdrop-blur-sm border-[1px] border-solid border-white/20 fixed z-50">
-      <div className="flex justify-start items-center">
-        <h1 className="font-Rubik text-3xl font-medium">
+      <div className="flex items-center justify-start">
+        <h1 className="text-3xl font-medium font-Rubik">
           Ady<span className="text-color-palette-2">.to</span>
         </h1>
       </div>
-      <ul className="flex-1 flex justify-center items-center list-none max-md:hidden">
+      <ul className="flex items-center justify-center flex-1 list-none max-md:hidden">
         {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
-          <li key={`link-${item}`} className="cursor-pointer my-0 mx-4">
+          <li key={`link-${item}`} className="mx-4 my-0 cursor-pointer">
             <a
               href={`#${item}`}
-              className="text-gray-500 uppercase font-medium transition-all duration-300 ease-in-out hover:text-color-palette-2"
+              className="font-medium text-gray-500 uppercase transition-all duration-300 ease-in-out hover:text-color-palette-2"
             >
               {item}
             </a>
@@ -30,17 +30,17 @@ const Navbar = () => {
       </ul>
       <div className="max-md:hidden ">
         <a
-          href="https://www.cakeresume.com/pdf/s--E9TFToAxIHXgS-sx_MsbrA--/6bbRy.pdf"
-          className="flex flex-row items-center cursor-pointer bg-color-palette-2/80 py-1 px-3 gap-2 w-full h-full text-white rounded-full"
+          href="https://www.cakeresume.com/pdf/s--oL4v67sW8-7gggwKQMg8iQ--/rQkAW.pdf"
+          className="flex flex-row items-center w-full h-full gap-2 px-3 py-1 text-white rounded-full cursor-pointer bg-color-palette-2/80"
         >
           <AiOutlineCloudDownload />
           <span>Resume</span>
         </a>
       </div>
-      <div className="w-9 h-9 rounded-full relative flex-row justify-center items-center bg-color-palette-2 md:hidden flex">
+      <div className="relative flex flex-row items-center justify-center rounded-full w-9 h-9 bg-color-palette-2 md:hidden">
         <HiMenuAlt4
           onClick={() => setToggle(true)}
-          className="w-3/4 h-3/4 text-white"
+          className="w-3/4 text-white h-3/4"
         />
         {toggle && (
           <motion.div
@@ -56,23 +56,23 @@ const Navbar = () => {
           >
             <HiX
               onClick={() => setToggle(false)}
-              className="w-9 h-9 text-color-palette-2 my-2 mx-4"
+              className="mx-4 my-2 w-9 h-9 text-color-palette-2"
             />
-            <ul className="list-none m-0 p-0 h-full w-full flex justify-start items-start flex-col">
+            <ul className="flex flex-col items-start justify-start w-full h-full p-0 m-0 list-none">
               {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
                 <li key={item} className="m-4">
                   <a
                     href={`#${item}`}
                     onClick={() => setToggle(false)}
-                    className="text-gray-400 text-base uppercase font-medium transition-all duration-300 ease-in-out hover:text-color-palette-2"
+                    className="text-base font-medium text-gray-400 uppercase transition-all duration-300 ease-in-out hover:text-color-palette-2"
                   >
                     {item}
                   </a>
                 </li>
               ))}
               <a
-                href="https://www.cakeresume.com/pdf/s--dXvS29t2-grECLYZyk2cPQ--/2NvwN.pdf"
-                className="flex flex-row items-center cursor-pointer bg-color-palette-2/80 py-1 px-3 gap-2  text-white rounded-full"
+                href="https://www.cakeresume.com/pdf/s--oL4v67sW8-7gggwKQMg8iQ--/rQkAW.pdf"
+                className="flex flex-row items-center gap-2 px-3 py-1 text-white rounded-full cursor-pointer bg-color-palette-2/80"
               >
                 <AiOutlineCloudDownload />
                 <span>Resume</span>

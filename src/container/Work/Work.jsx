@@ -46,12 +46,12 @@ const Work = () => {
   const res = sortedDates.filter((w) => w._id.includes(modalId));
 
   return (
-    <div className="flex flex-col w-full h-full justify-center items-center my-10 relative">
+    <div className="relative flex flex-col items-center justify-center w-full h-full my-10">
       <h1 className="text-5xl font-bold text-center text-black capitalize">
         My Creative <span className="text-color-palette-2">Portfolio </span>
         Section
       </h1>
-      <div className="flex lg:flex-row lg:justify-start items-center flex-wrap justify-center my-16 mx-8">
+      <div className="flex flex-wrap items-center justify-center mx-8 my-16 lg:flex-row lg:justify-start">
         {['Web Design', 'ReactJS', 'NextJS', 'All'].map((item, index) => (
           <div
             key={item + index}
@@ -67,20 +67,20 @@ const Work = () => {
       <motion.div
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="flex flex-wrap justify-center items-center w-full gap-8"
+        className="flex flex-wrap items-center justify-center w-full gap-8"
       >
         {sortedDates.map((work, index) => (
           <div
             className="flex justify-between items-center w-72 h-[450px] flex-col p-4 rounded-lg bg-white text-black cursor-pointer transition-all duration-300 hover:shadow-md hover:shadow-black/20"
             key={index}
           >
-            <div className="flex justify-center items-center w-full h-60 relative">
+            <div className="relative flex items-center justify-center w-full h-60">
               <img
                 src={urlFor(work.imgUrl)}
                 alt={work.name}
-                className="w-full h-full rounded-lg object-cover"
+                className="object-cover w-full h-full rounded-lg"
               />
-              <p className="text-sm bg-white w-20 mx-auto rounded-lg px-2 py-2 shadow-md text-center text-gray-400 absolute inset-x-0 -bottom-4 ">
+              <p className="absolute inset-x-0 w-20 px-2 py-2 mx-auto text-sm text-center text-gray-400 bg-white rounded-lg shadow-md -bottom-4 ">
                 {work.tags[0]}
               </p>
               <motion.div
@@ -90,7 +90,7 @@ const Work = () => {
                   ease: 'easeInOut',
                   staggerChildren: 0,
                 }}
-                className="flex justify-center items-center absolute  w-full h-full bg-black/50 rounded-lg opacity-0 transition-all duration-300"
+                className="absolute flex items-center justify-center w-full h-full transition-all duration-300 rounded-lg opacity-0 bg-black/50"
               >
                 <motion.div
                   whileInView={{ scale: [0, 1] }}
@@ -105,7 +105,7 @@ const Work = () => {
                       setModal(true);
                       setModalId(work._id);
                     }}
-                    className="border py-2 px-2 scale-95 hover:scale-100 duration-200 rounded-md"
+                    className="px-2 py-2 duration-200 scale-95 border rounded-md hover:scale-100"
                   >
                     Stacks
                   </button>
@@ -113,18 +113,18 @@ const Work = () => {
                     href={work?.projectLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="border py-2 px-2 scale-95 hover:scale-100 duration-200 rounded-md"
+                    className="px-2 py-2 duration-200 scale-95 border rounded-md hover:scale-100"
                   >
                     View More
                   </a>
                 </motion.div>
               </motion.div>
             </div>
-            <div className="flex justify-center items-center p-2 w-full relative flex-col">
-              <h1 className="mt-4 font-extrabold text-base text-black text-left">
+            <div className="relative flex flex-col items-center justify-center w-full p-2">
+              <h1 className="mt-4 text-base font-extrabold text-left text-black">
                 {work.title}
               </h1>
-              <p className="text-sm text-left text-gray-400 mt-3">
+              <p className="mt-3 text-sm text-left text-gray-400">
                 {work.description.length > 100
                   ? `${work.description.substring(0, 100)}....`
                   : work.description}
@@ -135,14 +135,14 @@ const Work = () => {
                     setModal(true);
                     setModalId(work._id);
                   }}
-                  className="border px-3 py-1 bg-color-palette-2 text-white rounded-md scale-95 hover:scale-100"
+                  className="px-3 py-1 text-white scale-95 border rounded-md bg-color-palette-2 hover:scale-100"
                 >
                   Stacks
                 </button>
                 <a
                   href={work?.projectLink}
                   target="_blank"
-                  className="border px-3 py-1 bg-color-palette-2 text-white rounded-md scale-95 hover:scale-100"
+                  className="px-3 py-1 text-white scale-95 border rounded-md bg-color-palette-2 hover:scale-100"
                   rel="noreferrer"
                 >
                   View More
@@ -153,16 +153,16 @@ const Work = () => {
         ))}
       </motion.div>
       {modal && (
-        <div className="w-5/6 lg:w-1/2 lg:h/1/2 fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-50 bg-color-palette-4 p-4 text-white">
+        <div className="fixed z-50 w-5/6 p-4 text-white -translate-x-1/2 -translate-y-1/2 lg:w-1/2 lg:h/1/2 top-1/2 left-1/2 bg-color-palette-4">
           <IoMdClose
             onClick={() => setModal(false)}
-            className="absolute top-2 right-1 cursor-pointer"
+            className="absolute cursor-pointer top-2 right-1"
           />
 
           {res.map((value, i) => (
             <div
               key={i}
-              className="flex flex-col w-full justify-center items-center"
+              className="flex flex-col items-center justify-center w-full"
             >
               <span>Identify technologies on websites</span>
               <span className="mb-4">Third-Party NPM Packages</span>
