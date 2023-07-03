@@ -30,7 +30,7 @@ const Navbar = () => {
       </ul>
       <div className="max-md:hidden ">
         <a
-          href="https://www.cakeresume.com/pdf/s--6uGkmdA91duVZEGEOoZG1w--/pJV5j.pdf"
+          href="https://www.cakeresume.com/pdf/s--gCiy253bcEPgwpkhs7iqRg--/DjAWE.pdf"
           className="flex flex-row items-center w-full h-full gap-2 px-3 py-1 text-white rounded-full cursor-pointer bg-color-palette-2/80"
         >
           <AiOutlineCloudDownload />
@@ -71,7 +71,7 @@ const Navbar = () => {
                 </li>
               ))}
               <a
-                href="https://www.cakeresume.com/pdf/s--6uGkmdA91duVZEGEOoZG1w--/pJV5j.pdf"
+                href="https://www.cakeresume.com/pdf/s--gCiy253bcEPgwpkhs7iqRg--/DjAWE.pdf"
                 className="flex flex-row items-center gap-2 px-3 py-1 text-white rounded-full cursor-pointer bg-color-palette-2/80"
               >
                 <AiOutlineCloudDownload />
