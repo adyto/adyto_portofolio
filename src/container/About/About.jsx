@@ -28,7 +28,7 @@ const About = () => {
           My interest in technology is very high, I am proficient in using CSS
           Framework with Tailwind or Bootstap, HTML and CSS.
           I graduated from the National University of Information Systems,  */}
-          Currently I have experience in the field of Frontend Developer for approximately 10 months. 
+          Currently I have experience in the field of Frontend Developer. 
           I always want to learn something new hard working and has a high learning willingness. 
           Carry out website development, testing and maintenance, develop capabilities in problem-solving and optimize user experience.
           {/* <span className="block mt-2">
