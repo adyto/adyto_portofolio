@@ -24,10 +24,14 @@ const About = () => {
           <span className="text-color-palette-2 relative font-medium after:hover:absolute after:hover:bg-color-palette-2 after:hover:-bottom-0.5 after:hover:left-0 after:h-0.5 after:transition-all after:duration-500 after:w-full cursor-default">
             Adi Yulianto
           </span>{' '}
-          I am a Fresh-Graduate in Information System from National University.
+          {/* I am a Fresh-Graduate in Information System from National University.
           My interest in technology is very high, I am proficient in using CSS
           Framework with Tailwind or Bootstap, HTML and CSS.
-          <span className="block mt-2">
+          I graduated from the National University of Information Systems,  */}
+          Currently I have experience in the field of Frontend Developer. 
+          I always want to learn something new hard working and has a high learning willingness. 
+          Carry out website development, testing and maintenance, develop capabilities in problem-solving and optimize user experience.
+          {/* <span className="block mt-2">
             I am also interesting to have good experience in ReactJS and
             Javascript to build application and build a website with a
             responsive web design which will to good view when we are on mobile
@@ -39,7 +43,7 @@ const About = () => {
             manager found in NPM. and recently I'm studying Sanity which can
             make it easier to store data and make it easier for a full stuck
             developer
-          </span>
+          </span> */}
           <span className="block mt-2">
             Here are some of the{' '}
             <span className="text-color-palette-2 relative font-medium after:hover:absolute after:hover:bg-color-palette-2 after:hover:-bottom-0.5 after:hover:left-0 after:h-0.5 after:transition-all after:duration-500 after:w-full cursor-default">

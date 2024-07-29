@@ -18,6 +18,7 @@ const scaleVariants = {
 };
 
 const Header = () => {
+  console.log('test header')
   return (
     <div className="flex justify-center items-center relative flex-1 w-full flex-col lg:flex-row py-24 px-4 sm:py-24 sm:px-8 ">
       <motion.div
