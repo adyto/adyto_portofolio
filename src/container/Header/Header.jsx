@@ -32,7 +32,7 @@ const Header = () => {
             <div className="ml-5 lg:ml-3 xl:ml-4">
               <p className="">Hello, I am</p>
               <h1 className="items-center text-3xl font-extrabold text-black capitalize lg:text-3xl xl:text-4xl">
-                Adi Yulianto1
+                Adi Yulianto
               </h1>
             </div>
           </div>
