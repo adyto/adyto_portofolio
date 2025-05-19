@@ -27,6 +27,7 @@ import bgIMG from '../assets/bgIMG.png';
 import pasFOTO from '../assets/PASFOTO.png';
 import adytoLogo from '../assets/adytoLogo.png';
 import tailwind from '../assets/tailwind.png';
+import pasFotoTwo from '../assets/pasFotoTwo.png';
 
 export default {
   tailwind,
@@ -55,4 +56,5 @@ export default {
   about04,
   circle,
   logo,
+  pasFotoTwo,
 };
